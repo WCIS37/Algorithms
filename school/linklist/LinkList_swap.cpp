@@ -9,7 +9,6 @@ typedef struct Node{
 void initList(LinkList &L){
     L = new LNode;
     L->next = NULL;
-    
 }
 
 // 前插法
