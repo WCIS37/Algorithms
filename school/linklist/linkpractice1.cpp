@@ -1,3 +1,7 @@
+/*
+将两个递增有序链表合并为一个递增有序链表，结果链表仍使用原来两表的存储空间，表中不允许有重复数据。
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -31,6 +35,10 @@ void sortList(LinkList &L1, LinkList &L2) {
     LNode *p1 = L1;
     LNode *p2 = L2->next;
     LNode *temp;
+    if (L1->next == NULL || L2->next == NULL){
+        cout << "有链表为空";
+        return;
+    }
 
     while (p1->next != NULL && p2 != NULL) {
         if (p1->next->data < p2->data) {
@@ -51,6 +59,7 @@ void sortList(LinkList &L1, LinkList &L2) {
         p1->next = p2;
     }
 }
+
 void display(LinkList L){
     LNode *p = L->next;
     if (p == NULL){;
