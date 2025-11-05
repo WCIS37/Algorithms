@@ -33,6 +33,11 @@ void createLink(LinkList &L){
 
 // 删除链表特定值区间
 void deleteLink(LinkList &L){
+    if (L->next == NULL){
+        cout << "链表为空" << endl;
+        return;
+    }
+
     int maxk, mink;
     cout << "请依次输入删除区间的 最小值 和 最大值" << endl;
     cin >> mink >> maxk;

@@ -32,8 +32,14 @@ void createLink(LinkList &L){
 
 // 逆转链表
 void reverse(LinkList &L){
+    if (L->next == NULL){
+        cout << "链表为空" << endl;
+        return;
+    }
+
     LNode *p = L->next->next;
     LNode *q = L->next;
+    
     L->next = NULL;
     do{
         q->next = L->next;

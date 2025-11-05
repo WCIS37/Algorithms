@@ -36,6 +36,7 @@ void Intersection(LinkList &L1, LinkList &L2){
     LNode *q1 = L1;
     LNode *p1 = L1->next;
     LNode *p2 = L2->next;
+    bool flag = true;
 
     if (L1->next == NULL || L2->next == NULL){
         cout << "有链表为空";
@@ -55,7 +56,12 @@ void Intersection(LinkList &L1, LinkList &L2){
             p1 = p1->next;  // 必须写在q1->next = NULL前面，不然L1链就会断
             p2 = p2->next;
             q1->next = NULL;
+            flag = false;
         }
+    }
+    if (flag){
+        cout << "链表没有交集" << endl;
+        return;
     }
 }
 

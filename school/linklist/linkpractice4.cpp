@@ -40,8 +40,8 @@ int linkException(LinkList &L1,LinkList &L2){
     LNode *p2 = L2->next;
 
     if (L1->next == NULL || L2->next == NULL){
-        cout << "有链表为空";
-        return;
+        cout << "有链表为空" << endl;
+        return 0;
     }
 
     L1->next = NULL;
@@ -83,5 +83,5 @@ int main(){
     create(L2);
     int count = linkException(L1,L2);
     display(L1);
-    cout << "元素个数为：" << count;
+    cout << "差集元素个数为：" << count;
 }

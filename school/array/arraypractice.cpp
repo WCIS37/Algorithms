@@ -20,7 +20,7 @@ void initArr(SeqList* &arr){
 
 void inputArr(SeqList* &arr){
 	int n;
-	cout << "请输入线性表的长度n" << endl;
+	cout << "请输入线性表的长度" << endl;
 	cin >> n;
 	cout << "请依次输入线性表元素" << endl;
 	for (int i = 0; i < n; i++){

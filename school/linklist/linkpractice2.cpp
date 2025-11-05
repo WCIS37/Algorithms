@@ -16,7 +16,7 @@ void initList(LinkList &L){
     L->next = NULL;
 }
 
-// 头插法
+// 头插法使非递减输入变成非递增链表
 void createList(LinkList &L){
     int n;
     cout << "请输入元素个数:" << endl;
@@ -32,6 +32,7 @@ void createList(LinkList &L){
 
 void sortList(LinkList &L1, LinkList &L2) {
     LNode *p1 = L1->next;
+    LNode *q1 = L1;
     LNode *p2 = L2->next;
     LNode *temp;
     if (L1->next == NULL || L2->next == NULL){
@@ -39,17 +40,20 @@ void sortList(LinkList &L1, LinkList &L2) {
         return;
     }
 
-    while (p2 != NULL){
-        while (p1->next != NULL && p1->next->data < p2->data){
+    do {
+        if (p1->data <= p2->data){
+            temp = p2->next;
+            p2->next = p1;
+            q1->next = p2;
+            p2 = temp;
+            q1 = q1->next;
+        }else{
+            q1 = p1;
             p1 = p1->next;
         }
-        temp = p2->next;
-        p2->next = p1->next;
-        p1->next = p2;
-        p2 = temp;
-    }
-    if (p2 != NULL) {
-        p1->next = p2;
+    }while (p1 != NULL && p2 != NULL);
+    if (p2 != NULL){
+        q1->next = p2;
     }
 }
 

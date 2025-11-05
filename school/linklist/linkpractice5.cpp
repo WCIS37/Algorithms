@@ -37,6 +37,7 @@ void splitLink(LinkList &L1, LinkList &L2, LinkList &L3){
     LNode *p1 = L1->next;
     LNode *q2 = L2;
     LNode *q3 = L3;
+
     while (p1 != NULL){ 
         if (p1->data < 0){
             q2->next = p1;
@@ -46,7 +47,10 @@ void splitLink(LinkList &L1, LinkList &L2, LinkList &L3){
             q3->next = p1;
             q3 = q3->next;
             p1 = p1->next;
+        }else{
+            p1 = p1->next;
         }
+
     }
     q2->next = NULL;
     q3->next = NULL;
@@ -58,6 +62,7 @@ void display(LinkList L){
         cout << "链表为空" << endl;
         return;
     }
+
     while (p->next != NULL){
         cout << p->data << " -> ";
         p = p->next;

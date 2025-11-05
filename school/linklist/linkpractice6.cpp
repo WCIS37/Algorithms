@@ -33,6 +33,11 @@ void createLink(LinkList &L){
 
 int linkMaxValue(LinkList &L){
     LNode *p = L->next;
+
+    if (p == NULL){
+        return 0;
+    }
+
     int maxlink = p->data;
     while (p->next != NULL){
         if (maxlink < p->next->data){
@@ -54,5 +59,9 @@ int main(){
     initLink(L);
     createLink(L);
     maxvalue = linkMaxValue(L);
-    cout << maxvalue;
+    if (maxvalue == 0){
+        cout << "链表为空";
+    }else{
+        cout << maxvalue;
+    }
 }
