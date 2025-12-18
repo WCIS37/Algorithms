@@ -178,7 +178,7 @@ void levelorderTraversal(BiTree T){
 
 int main(){
     BiTree T;
-    cout << "请按先序顺序依次输入节点" << endl;
+    cout << "请按先序顺序依次输入节点，空结点请输入#：" << endl;
     createBiTree(T);
     cout << "先序遍历：";
     preorderTraversal(T);
